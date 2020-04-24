@@ -9,7 +9,7 @@ public class exercise2
 {
     public static void main(String[] args)
     {
-        //Test
+        //Test by Alex
         SequenceTest.println(new Naturals());
         SequenceTest.println(new Range(7, 14));
     }
