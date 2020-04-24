@@ -1,4 +1,4 @@
-package horny.prog2.exercises.set02.sequences;
+package HornyMerk.prog2.exercises.set02.sequences;
 
 public class Range extends Sequence
 {
