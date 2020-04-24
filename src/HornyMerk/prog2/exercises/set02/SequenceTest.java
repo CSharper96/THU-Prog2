@@ -3,6 +3,7 @@ package HornyMerk.prog2.exercises.set02;
 import HornyMerk.prog2.exercises.set02.Filters.Evens;
 import HornyMerk.prog2.exercises.set02.Filters.ZapMultiples;
 import HornyMerk.prog2.exercises.set02.sequences.Naturals;
+import HornyMerk.prog2.exercises.set02.sequences.PrimeNumbers;
 import HornyMerk.prog2.exercises.set02.sequences.Range;
 
 public class SequenceTest
@@ -50,6 +51,12 @@ public class SequenceTest
     {
         System.out.println("\n\nMultiple numbers:\n");
         for(int number : zapMultiples.MultipleNumbers)
+            System.out.println(number);
+    }
+    public static void println(PrimeNumbers primeNumbers)
+    {
+        System.out.println("\n\nMultiple numbers:\n");
+        for(int number : primeNumbers.Primes)
             System.out.println(number);
     }
 }

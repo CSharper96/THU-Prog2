@@ -13,7 +13,7 @@ public class ZapMultiples
     {
         MultipleNumbers = new ArrayList<>();
         _Divisor = divisor;
-        GenerateEvenNumbers(naturals.Numbers);
+        GenerateEvenNumbers((ArrayList<Integer>) naturals.Numbers);
     }
     public ZapMultiples(Range range, int divisor)
     {
@@ -33,5 +33,9 @@ public class ZapMultiples
         if(element % _Divisor == 0)
             return false;
         else return true;
+    }
+    public ArrayList<Integer> PassList()
+    {
+        return MultipleNumbers;
     }
 }

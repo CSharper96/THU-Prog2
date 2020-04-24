@@ -1,14 +1,15 @@
 package HornyMerk.prog2.exercises.set02.sequences;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Naturals extends Sequence
 {
-    public ArrayList<Integer> Numbers;
+    public List<Integer> Numbers;
     static int _Counter;
     public Naturals()
     {
-        Numbers = new ArrayList<>();
+        Numbers = new ArrayList<Integer>();
         InitNumbers();
         _Counter = 0;
     }
@@ -19,7 +20,7 @@ public class Naturals extends Sequence
     }
     public boolean hasNext()
     {
-        if(hasNext(_Counter, this.Numbers)) return true;
+        if(hasNext(_Counter, (ArrayList<Integer>) Numbers)) return true;
         else return false;
     }
     public int nextElement() throws Exception
@@ -27,7 +28,7 @@ public class Naturals extends Sequence
         if(hasNext())
         {
             _Counter ++;
-            return nextElement(_Counter, this.Numbers);
+            return nextElement(_Counter, (ArrayList<Integer>) Numbers);
         }
         else throw new Exception("No next Element!");
     }

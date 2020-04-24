@@ -11,7 +11,7 @@ public class Evens
     public Evens(Naturals naturals)
     {
         EvenNumbers = new ArrayList<>();
-        GenerateEvenNumbers(naturals.Numbers);
+        GenerateEvenNumbers((ArrayList<Integer>) naturals.Numbers);
     }
     public Evens(Range range)
     {
