@@ -7,7 +7,19 @@ public class SequenceTest
 {
     public static void println(Naturals naturals)
     {
-
+        System.out.println(naturals.GetElement());
+        while(naturals.hasNext())
+        {
+            if(naturals.GetElement() >= 10) break;
+            try
+            {
+                System.out.println(naturals.nextElement());
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
     }
     public static void println(Range range)
     {
