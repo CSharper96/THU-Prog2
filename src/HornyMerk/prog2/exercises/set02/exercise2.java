@@ -1,5 +1,7 @@
 package HornyMerk.prog2.exercises.set02;
 
+import HornyMerk.prog2.exercises.set02.Filters.Evens;
+import HornyMerk.prog2.exercises.set02.Filters.ZapMultiples;
 import HornyMerk.prog2.exercises.set02.sequences.Naturals;
 import HornyMerk.prog2.exercises.set02.sequences.Range;
 
@@ -12,5 +14,7 @@ public class exercise2
         //Test by Alex
         SequenceTest.println(new Naturals());
         SequenceTest.println(new Range(7, 14));
+        SequenceTest.println(new Evens(new Range(7, 14)));
+        SequenceTest.println(new ZapMultiples(new Range(7, 14), 3));
     }
 }

@@ -1,5 +1,7 @@
 package HornyMerk.prog2.exercises.set02;
 
+import HornyMerk.prog2.exercises.set02.Filters.Evens;
+import HornyMerk.prog2.exercises.set02.Filters.ZapMultiples;
 import HornyMerk.prog2.exercises.set02.sequences.Naturals;
 import HornyMerk.prog2.exercises.set02.sequences.Range;
 
@@ -37,5 +39,17 @@ public class SequenceTest
                 System.out.println(e.getMessage());
             }
         }
+    }
+    public static void println(Evens evens)
+    {
+        System.out.println("\n\nEven numbers:\n");
+        for(int number : evens.EvenNumbers)
+            System.out.println(number);
+    }
+    public static void println(ZapMultiples zapMultiples)
+    {
+        System.out.println("\n\nMultiple numbers:\n");
+        for(int number : zapMultiples.MultipleNumbers)
+            System.out.println(number);
     }
 }
