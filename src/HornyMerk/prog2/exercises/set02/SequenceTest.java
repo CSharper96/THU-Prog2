@@ -7,6 +7,7 @@ public class SequenceTest
 {
     public static void println(Naturals naturals)
     {
+        System.out.println("\nNaturals from 1 to 10:\n");
         System.out.println(naturals.GetElement());
         while(naturals.hasNext())
         {
@@ -23,6 +24,18 @@ public class SequenceTest
     }
     public static void println(Range range)
     {
-
+        System.out.println("\n\nRange from 7 to 14:\n");
+        System.out.println(range.GetElement());
+        while(range.hasNext())
+        {
+            try
+            {
+                System.out.println(range.nextElement());
+            }
+            catch (Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }

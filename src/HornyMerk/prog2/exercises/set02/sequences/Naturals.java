@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Naturals extends Sequence
 {
     public ArrayList<Integer> Numbers;
-    static int counter;
+    static int _Counter;
     public Naturals()
     {
-        Numbers = new ArrayList<Integer>();
+        Numbers = new ArrayList<>();
         InitNumbers();
-        counter = 0;
+        _Counter = 0;
     }
     private void InitNumbers()
     {
@@ -19,20 +19,20 @@ public class Naturals extends Sequence
     }
     public boolean hasNext()
     {
-        if(hasNext(counter, this.Numbers)) return true;
+        if(hasNext(_Counter, this.Numbers)) return true;
         else return false;
     }
     public int nextElement() throws Exception
     {
         if(hasNext())
         {
-            counter ++;
-            return nextElement(counter, this.Numbers);
+            _Counter ++;
+            return nextElement(_Counter, this.Numbers);
         }
         else throw new Exception("No next Element!");
     }
     public int GetElement()
     {
-        return Numbers.get(counter);
+        return Numbers.get(_Counter);
     }
 }
