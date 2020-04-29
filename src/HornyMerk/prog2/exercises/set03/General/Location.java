@@ -5,4 +5,10 @@ public class Location
     public String Name;
     public int X;
     public int Y;
+    public Location(int x, int y, String name)
+    {
+        X = x;
+        Y = y;
+        Name = name;
+    }
 }
