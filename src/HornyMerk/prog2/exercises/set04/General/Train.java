@@ -16,7 +16,25 @@ public class Train extends Locomotive
     {
         while (locomotive.HasCars())
         {
-            this.Add(this.GetIndex(), locomotive.RemoveFirst());
+            int index = this.GetIndex();
+            Car removedCar = locomotive.RemoveFirst();
+            this.Add(index, removedCar);
         }
+    }
+    public void Revert()
+    {
+        int test = this.GetIndex() - 1;
+
+        List<Car> cars = new ArrayList<>();
+        for(int i = 0; i < test; i++)
+            cars.add(this.RemoveFirst());
+        for(int i = cars.size(); i > 0; i--)
+            this.Add(this.GetIndex(), cars.get(i - 1));
+    }
+    public String ToString()
+    {
+        return ("This train got " + this.GetIndex() +
+                " cars, a capacity of " + this.GetPassengers() +
+                " passengers and the length of " + this.GetLength() + " m.");
     }
 }

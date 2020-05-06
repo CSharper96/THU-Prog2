@@ -31,7 +31,6 @@ public class Locomotive extends Car
     }
     public void Add(int index, Car newCar)
     {
-        newCar.SetNextCar(null);
         if(index < 0) System.out.println("Gad ned!");
         else if (index == 0) _FirstCar = newCar;
         else
@@ -40,7 +39,7 @@ public class Locomotive extends Car
             for(int i = 1; i < index; i++)
             {
                 if(nextCar.HasNextCar())
-                    nextCar = _FirstCar.GetNextCar();
+                    nextCar = nextCar.GetNextCar();
                 else
                 {
                     System.out.println("Gad ned zum 2.");
@@ -54,6 +53,9 @@ public class Locomotive extends Car
     {
         Car actualCar = _FirstCar;
         int passengers = 0;
+
+        if(actualCar == null) return passengers;
+
         while(actualCar.HasNextCar())
         {
             passengers += actualCar.Passengers;
@@ -66,6 +68,9 @@ public class Locomotive extends Car
     {
         Car actualCar = _FirstCar;
         int length = this.Length;
+
+        if(actualCar == null) return length;
+
         while(actualCar.HasNextCar())
         {
             length += actualCar.Length;
@@ -97,8 +102,10 @@ public class Locomotive extends Car
                 }
                 Add(cars.size(), null);
             }
+            else this._FirstCar = null;
         }
         else return removedCar;
+        removedCar.SetNextCar(null);
         return removedCar;
     }
     public int GetIndex()
