@@ -1,5 +1,8 @@
 package HornyMerk.prog2.exercises.set05.Tanks;
 
+import java.lang.reflect.Type;
+import java.util.Collection;
+
 public class Properties
 {
     public double Volume;
@@ -9,28 +12,28 @@ public class Properties
     protected double Height;
     protected double Radius;
 
-    public void CalculateVolume(CuboidTank tank)
+    protected void calculateVolume(CuboidTank tank)
     {
-
+        Volume = Length * Width * Height;
     }
-    public void CalculateVolume(SphericalTank tank)
+    protected void calculateVolume(SphericalTank tank)
     {
-
+        Volume = (4 / 3) * Math.PI * Math.pow(Radius, 3);
     }
-    public void CalculateVolume(CylindricalTank tank)
+    protected void calculateVolume(CylindricalTank tank)
     {
-
+        Volume = Math.PI * Math.pow(Radius, 2) * Height;
     }
-    public void CalculateSurface(CuboidTank tank)
+    protected void calculateSurface(CuboidTank tank)
     {
-
+        Surface = 2 * (Length * Width + Length * Height + Width * Height);
     }
-    public void CalculateSurface(SphericalTank tank)
+    protected void calculateSurface(SphericalTank tank)
     {
-
+        Surface = 4 * Math.PI * Math.pow(Radius, 2);
     }
-    public void CalculateSurface(CylindricalTank tank)
+    protected void calculateSurface(CylindricalTank tank)
     {
-
+        Surface = 2 * Math.PI * Radius * (Radius + Height);
     }
 }
