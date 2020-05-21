@@ -50,6 +50,7 @@ public class WordFrequencyCounter extends Collector
         int i = 0;
         for (HashMap.Entry<String, Integer> entry: CollectedWords.entrySet())
         {
+            if(entry.getKey().equals(""))continue;
             if(i != 4)
             {
                 System.out.printf("%10s : %3d\t", entry.getKey(), entry.getValue());
