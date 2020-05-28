@@ -1,109 +1,210 @@
 package HornyMerk.prog2.exercises.set07.Utilities;
 
+import java.util.Arrays;
+import java.util.Iterator;
 
-public class Deque<T>
-{
-    private Object[] _Array;
-    private int _Size;
-    private int _Head;
-    private int _Tail;
+public class Deque <T > implements Iterable, Cloneable{
 
-    public Deque(int size)
+    private T[] _Array;
+    private int _FirstIndex;
+    private int _LastIndex;
+
+    public Deque(int capacity)
     {
-        _Array = new Object[size];
-        _Size = size;
-        _Head = 0;
-        _Tail = 1;
+        _Array = (T[]) new Object[capacity];
+        _FirstIndex = 0;
+        _LastIndex = capacity-1;
     }
+
     public boolean isEmpty()
     {
-        boolean condition = false;
-        for(int i = 0; i < _Size; i++)
+        boolean check = true;
+        for (int i = 0; i < _Array.length; i++)
         {
-            if (_Array[i] != null) condition = true;
+            if(_Array[i] != null)
+            {
+                check = false;
+            }
         }
-        return condition;
+        return check;
     }
-    public boolean isFull()
-    {
-        boolean condition = true;
-        for(int i = 0; i < _Size; i++)
+
+    public boolean isFull(){
+        boolean check = true;
+        for (int i = 0; i < _Array.length; i++)
         {
-            if (_Array[i] == null) condition = false;
+            if(_Array[i] == null)
+            {
+                check = false;
+            }
         }
-        return condition;
+        return check;
     }
+
     public int size()
     {
-        int size = 0;
-        for(int i = 0; i < _Size; i++)
+        int count = 0;
+        for (int i = 0; i < _Array.length; i++)
         {
-            if(_Array[i] != null) size++;
+            if(_Array[i] != null)
+            {
+                count++;
+            }
         }
-        return size;
+        return count;
     }
+
     public int capacity()
     {
-        return _Size;
+        return _Array.length;
     }
+
     public T get(int i)
     {
-        final T t = (T) _Array[i];
-        return t;
+        if(!isEmpty() && i <= size() && i >= 0)
+        {
+            int ind = _FirstIndex;
+            for (int j = 0; j < i; j++)
+            {
+                if(ind < capacity() - 1) ind++;
+                else ind = 0;
+            }
+            return _Array[ind];
+        }
+        else if(i > size() || i < 0)
+        {
+            System.out.println("Wrong index.");
+            return null;
+        }
+        else
+        {
+            System.out.println("Deque is empty.");
+            return null;
+        }
     }
+
     public void addFirst(T elem)
     {
-        int size = 0;
-        for(int i = 0; i < _Size; i++)
+        if(!isFull())
         {
-            if(_Array[i] != null) size++;
-            else break;
+            _FirstIndex = (capacity() + _FirstIndex - 1) % capacity();
+            _Array[_FirstIndex] = elem;
         }
-
-        Object[] tmp = new Object[size + 1];
-        tmp[0] = elem;
-
-        for(int i = 1; i < size; i++)
-            tmp[i] = _Array[i-1];
-
-
-        _Array[0] = elem;
-        _Tail++;
+        else System.out.println("Deque is already full.");
     }
+
     public T getFirst()
     {
-        final T t = (T) _Array[0];
-        return t;
+        if(!isEmpty()) return _Array[_FirstIndex];
+        else return null;
     }
+
     public T removeFirst()
     {
-        Object temp = _Array[0];
-        _Array[0] = null;
-        _Tail--;
-        return (T) temp;
+        if(!isEmpty())
+        {
+            T res = _Array[_FirstIndex];
+            _Array[_FirstIndex] = null;
+            _FirstIndex = (capacity() + _FirstIndex + 1) % capacity();
+
+            return res;
+        }
+        else return null;
     }
+
     public void addLast(T elem)
     {
-        _Array[_Tail] = elem;
-        _Tail++;
+        if(!isFull())
+        {
+            _LastIndex = (capacity() + _LastIndex + 1) % capacity();
+            _Array[_LastIndex] = elem;
+        }
+        else System.out.println("Deque is already full.");
     }
-    public T gerLast()
+
+    public T getLast()
     {
-        final T t = (T) _Array[_Tail];
-        return t;
+        if(!isEmpty())
+            return _Array[_LastIndex];
+
+        System.out.println("Deque is empty.");
+        return null;
     }
+
     public T removeLast()
     {
-        Object temp = _Array[0];
-        _Array[_Tail] = null;
-        _Tail--;
-        return (T) temp;
+        if(!isEmpty())
+        {
+            T result = _Array[_LastIndex];
+            _Array[_LastIndex] = null;
+            _LastIndex = (capacity() + _LastIndex - 1) % capacity();
+            return result;
+        }
+
+        System.out.println("Deque is empty.");
+        return null;
     }
+
+    @Override
     public String toString()
     {
-        String str = "";
-        for(int i = 0; i < _Size; i++)
-            str += _Array[i] + " ";
-        return str;
+        StringBuffer str = new StringBuffer();
+        str.append("[ ");
+        int ind = _FirstIndex;
+        for (int i = 0; i < capacity(); i++)
+        {
+            if(_Array[ind] != null)
+                str.append(_Array[ind].toString() + " ");
+
+            if(ind < capacity() - 1)
+                ind++;
+
+            else
+                ind = 0;
+        }
+        str.append("]");
+        return str.toString();
+    }
+
+    @Override
+    public Iterator iterator()
+    {
+        return new MyIterator(this);
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException
+    {
+        Deque<T> myDeque = null;
+        myDeque = (Deque<T>) super.clone();
+        myDeque._Array = (T[]) this._Array.clone();
+        return myDeque;
+    }
+
+    public static class MyIterator<E extends Comparable> implements Iterator
+    {
+        private Deque<E> deque;
+        private E first;
+
+        public MyIterator(Deque<E> deque)
+        {
+            this.deque = deque;
+            first = deque.getFirst();
+        }
+
+        @Override
+        public boolean hasNext()
+        {
+            return first != null;
+        }
+
+        @Override
+        public E next()
+        {
+            E res = deque.getFirst();
+            deque.removeFirst();
+            first = deque.getFirst();
+            return res;
+        }
     }
 }
