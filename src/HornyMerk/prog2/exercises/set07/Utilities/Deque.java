@@ -5,66 +5,98 @@ public class Deque<T>
 {
     private Object[] _Array;
     private int _Size;
-    private int _StartIndex;
-    private int _EndIndex;
+    private int _Head;
+    private int _Tail;
 
-    public Deque(T[] array)
+    public Deque(int size)
     {
-        _Array = array;
-        _Size = array.length;
-        _StartIndex = 0;
-        _EndIndex = 1;
+        _Array = new Object[size];
+        _Size = size;
+        _Head = 0;
+        _Tail = 1;
     }
     public boolean isEmpty()
     {
-        return true;
+        boolean condition = false;
+        for(int i = 0; i < _Size; i++)
+        {
+            if (_Array[i] != null) condition = true;
+        }
+        return condition;
     }
     public boolean isFull()
     {
-        return true;
+        boolean condition = true;
+        for(int i = 0; i < _Size; i++)
+        {
+            if (_Array[i] == null) condition = false;
+        }
+        return condition;
     }
     public int size()
     {
-        return _Size;
+        int size = 0;
+        for(int i = 0; i < _Size; i++)
+        {
+            if(_Array[i] != null) size++;
+        }
+        return size;
     }
     public int capacity()
     {
-        return 0;
+        return _Size;
     }
     public T get(int i)
     {
-        return (T) _Array[i];
+        final T t = (T) _Array[i];
+        return t;
     }
     public void addFirst(T elem)
     {
+        int size = 0;
+        for(int i = 0; i < _Size; i++)
+        {
+            if(_Array[i] != null) size++;
+            else break;
+        }
+
+        Object[] tmp = new Object[size + 1];
+        tmp[0] = elem;
+
+        for(int i = 1; i < size; i++)
+            tmp[i] = _Array[i-1];
+
+
         _Array[0] = elem;
-        _EndIndex++;
+        _Tail++;
     }
     public T getFirst()
     {
-        return (T) _Array[0];
+        final T t = (T) _Array[0];
+        return t;
     }
     public T removeFirst()
     {
         Object temp = _Array[0];
         _Array[0] = null;
-        _EndIndex--;
+        _Tail--;
         return (T) temp;
     }
     public void addLast(T elem)
     {
-        _Array[_EndIndex] = elem;
-        _EndIndex++;
+        _Array[_Tail] = elem;
+        _Tail++;
     }
     public T gerLast()
     {
-        return (T) _Array[_EndIndex];
+        final T t = (T) _Array[_Tail];
+        return t;
     }
     public T removeLast()
     {
         Object temp = _Array[0];
-        _Array[_EndIndex] = null;
-        _EndIndex--;
+        _Array[_Tail] = null;
+        _Tail--;
         return (T) temp;
     }
     public String toString()
