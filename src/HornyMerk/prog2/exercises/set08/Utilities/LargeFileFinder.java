@@ -4,9 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class LargeFileFinder implements ILargeFileFinder {
+public class LargeFileFinder
+{
 
-    public void largeWalk(ArrayList<File> files) throws IOException
+    public void execute(ArrayList<File> files) throws IOException
     {
         files = FileProcessor.sortFiles(files);
         for(File file : files)

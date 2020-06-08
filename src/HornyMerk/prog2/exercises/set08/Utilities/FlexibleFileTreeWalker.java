@@ -6,11 +6,15 @@ import java.util.ArrayList;
 
 public class FlexibleFileTreeWalker
 {
-    public ILargeFileFinder iLargeFileFinder;
     private ArrayList<File> _Files;
+    private Object _FileProcessor;
     public FlexibleFileTreeWalker()
     {
-        iLargeFileFinder = new LargeFileFinder();
+        _FileProcessor = null;
+    }
+    public FlexibleFileTreeWalker(LargeFileFinder fileProcessor)
+    {
+        _FileProcessor = fileProcessor;
     }
     public void walk(String pathname) throws IOException
     {
@@ -20,7 +24,7 @@ public class FlexibleFileTreeWalker
             for (File file : files)
                 if (file.isDirectory())
                     walk(file.getCanonicalPath());
-                else FileProcessor.process(file);
+                else IFileProcessor.process(file);
         }
     }
     private void getFiles(String pathname) throws IOException
@@ -38,10 +42,9 @@ public class FlexibleFileTreeWalker
     {
         _Files = new ArrayList<>();
         getFiles(pathname);
-        iLargeFileFinder.largeWalk(_Files);
     }
 
-    public interface FileProcessor
+    public interface IFileProcessor
     {
         static void process(File file) throws IOException
         {
