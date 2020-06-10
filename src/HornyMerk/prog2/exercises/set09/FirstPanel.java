@@ -2,6 +2,7 @@ package HornyMerk.prog2.exercises.set09;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -28,6 +29,7 @@ public class FirstPanel extends Application
         StackPane stackPane = new StackPane();
         GridPane gridPane = new GridPane();
         Scene scene = new Scene(borderPane, 300, 200);
+
         Button[] buttons = new Button[]
                 {
                         new Button("F1"),       //0
@@ -40,32 +42,53 @@ public class FirstPanel extends Application
                         new Button("Down"),     //7
                         new Button("Exit")      //8
                 };
+        /**
+         * Assign and define containers
+         */
+        {
+            borderPane.topProperty().set(stackPane);
+            borderPane.centerProperty().set(gridPane);
 
-        borderPane.topProperty().set(stackPane);
-        borderPane.centerProperty().set(gridPane);
-        borderPane.bottomProperty().set(buttons[8]);
-        buttons[8].setPrefWidth(borderPane.getMaxWidth()); //???
+            gridPane.setPrefWidth(Double.MAX_VALUE);
+            gridPane.addColumn(0);
+            gridPane.addColumn(1);
+            gridPane.addColumn(2);
+            gridPane.addRow(0);
+            gridPane.addRow(1);
+            gridPane.addRow(2);
+            //gridPane.setAlignment(Pos.CENTER);
+        }
+        /**
+         * Define button properties
+         */
+        {
+            buttons[8].setPrefWidth(Double.MAX_VALUE);
 
-        stackPane.getChildren().add(buttons[0]);
-        stackPane.getChildren().add(buttons[1]);
-        stackPane.getChildren().add(buttons[2]);
-        stackPane.getChildren().add(buttons[3]);
-        stackPane.setMargin(buttons[0], new Insets(0,102,0,0));
-        stackPane.setMargin(buttons[1], new Insets(0,34,0,0));
-        stackPane.setMargin(buttons[2], new Insets(0,0,0,34));
-        stackPane.setMargin(buttons[3], new Insets(0,0,0,102));
+            buttons[4].setPrefWidth(75);
+            buttons[5].setPrefWidth(75);
+            buttons[6].setPrefWidth(75);
+            buttons[7].setPrefWidth(75);
+        }
+        /**
+         *  Assign buttons to containers
+         */
+        {
+            stackPane.getChildren().add(buttons[0]);
+            stackPane.getChildren().add(buttons[1]);
+            stackPane.getChildren().add(buttons[2]);
+            stackPane.getChildren().add(buttons[3]);
+            stackPane.setMargin(buttons[0], new Insets(0,102,0,0));
+            stackPane.setMargin(buttons[1], new Insets(0,34,0,0));
+            stackPane.setMargin(buttons[2], new Insets(0,0,0,34));
+            stackPane.setMargin(buttons[3], new Insets(0,0,0,102));
 
-        gridPane.addColumn(0);
-        gridPane.addColumn(1);
-        gridPane.addColumn(2);
-        gridPane.addRow(0);
-        gridPane.addRow(1);
-        gridPane.addRow(2);
-        gridPane.add(buttons[4], 1, 0);
-        gridPane.add(buttons[5], 0, 1);
-        gridPane.add(buttons[6], 2, 1);
-        gridPane.add(buttons[7], 1, 2);
+            borderPane.bottomProperty().set(buttons[8]);
 
+            gridPane.add(buttons[4], 1, 0);
+            gridPane.add(buttons[5], 0, 1);
+            gridPane.add(buttons[6], 2, 1);
+            gridPane.add(buttons[7], 1, 2);
+        }
         primaryStage.setTitle("Testing JavaFX");
         primaryStage.setScene(scene);
         primaryStage.show();
