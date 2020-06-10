@@ -65,7 +65,6 @@ public class FirstPanel extends Application
             gridPane.addRow(0);
             gridPane.addRow(1);
             gridPane.addRow(2);
-            gridPane.setGridLinesVisible(true);
             {
                 // Setting columns size in percent
                 ColumnConstraints column = new ColumnConstraints();
