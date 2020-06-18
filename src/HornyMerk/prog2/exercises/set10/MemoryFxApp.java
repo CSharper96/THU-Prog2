@@ -23,6 +23,11 @@ public class MemoryFxApp extends Application implements IMemoryGame {
 
     private static MemoryGame _MemoryGame = new MemoryGame();
 
+    public static ArrayList<Button> Buttons;
+    public static MenuItem NewItem;
+    public static MenuItem ExitItem;
+    public static Label StatusLbl;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -34,32 +39,27 @@ public class MemoryFxApp extends Application implements IMemoryGame {
         MenuBar menuBar = new MenuBar();
         GridPane gameGrid = new GridPane();
 
-        Label statusLbl = new Label("Next: Player x");
+        StatusLbl = new Label("Active Player: Player 1");
 
-        ArrayList<Button> buttons = new ArrayList<>();
+        Buttons = new ArrayList<>();
 
         // Define control properties
-        {
-            buttons = createButtons();
+            Buttons = createButtons();
 
             // Defining MenuBar
-            {
                 Menu fileMenu = new Menu("File");
 
-                MenuItem newItem = new MenuItem("New");
-                MenuItem exitItem = new MenuItem("Exit?");
+        NewItem = new MenuItem("New");
+        ExitItem = new MenuItem("Exit?");
 
-                fileMenu.getItems().addAll(newItem, exitItem);
+                fileMenu.getItems().addAll(NewItem, ExitItem);
 
                 menuBar.getMenus().add(fileMenu);
-            }
-        }
         // Define and assign containers
-        {
             mainPane.setTop(menuBar);
             mainPane.setCenter(gameGrid);
-            mainPane.setBottom(statusLbl);
-            mainPane.setAlignment(statusLbl, Pos.CENTER);
+            mainPane.setBottom(StatusLbl);
+            mainPane.setAlignment(StatusLbl, Pos.CENTER);
 
             gameGrid.addColumn(0);
             gameGrid.addColumn(1);
@@ -68,7 +68,7 @@ public class MemoryFxApp extends Application implements IMemoryGame {
             gameGrid.addRow(0);
             gameGrid.addRow(1);
             gameGrid.addRow(2);
-            {
+
                 // Setting columns size in percent
                 ColumnConstraints column = new ColumnConstraints();
                 column.setPercentWidth(100.0/4.0);
@@ -98,30 +98,29 @@ public class MemoryFxApp extends Application implements IMemoryGame {
                 row = new RowConstraints();
                 row.setPercentHeight(100.0/3.0);
                 gameGrid.getRowConstraints().add(row);
-            }
-        }
         // Assign controls
-        {
-            assignButtons(buttons, gameGrid);
-        }
-        // EventHandler
-        {
 
-        }
+        assignButtons(Buttons, gameGrid);
+
+        // EventHandler
+
+
 
         Scene scene = new Scene(mainPane, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Testing JavaFX");
+        primaryStage.setTitle("Memory");
         primaryStage.setScene(scene);
         primaryStage.show();
+        _MemoryGame.newGame();
     }
     private ArrayList<Button> createButtons()
     {
         ArrayList<Button> buttons = new ArrayList<>();
 
-        for(int i = 0; i < 12; i++)
+        for(int i = 0; i < 12; i++) {
             buttons.add(new Button());
+        }
 
         return buttons;
     }

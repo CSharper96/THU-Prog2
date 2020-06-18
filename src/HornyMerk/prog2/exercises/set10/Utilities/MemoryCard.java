@@ -7,10 +7,10 @@ import org.w3c.dom.Text;
 
 public class MemoryCard
 {
-    private Button _AssignedButton;
     private String _Text;
     public boolean IsFlipped = false;
     public boolean IsOutOfGame = false;
+    public int Index;
 
     private Image _Image = null;
 
