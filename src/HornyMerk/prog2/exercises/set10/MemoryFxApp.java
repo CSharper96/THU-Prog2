@@ -8,6 +8,7 @@ import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -98,10 +99,12 @@ public class MemoryFxApp extends Application implements IMemoryGame {
                 row = new RowConstraints();
                 row.setPercentHeight(100.0/3.0);
                 gameGrid.getRowConstraints().add(row);
+
+                gameGrid.setStyle("-fx-background-image: url('file:/C:/Users/thoma/IntelliJ-Workspace/THU-Prog2/src/HornyMerk/prog2/exercises/set10/Utilities/background.jpg')");
+                //gameGrid.getStylesheets().addAll(this.getClass().getResource("Utilities/style.css").toExternalForm());
         // Assign controls
 
         assignButtons(Buttons, gameGrid);
-
         // EventHandler
 
 

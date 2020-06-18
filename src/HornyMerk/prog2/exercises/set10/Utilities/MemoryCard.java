@@ -14,12 +14,9 @@ public class MemoryCard
 
     private Image _Image = null;
 
-    public MemoryCard(String str, boolean isImage)
+    public MemoryCard(String str)
     {
-        if(!isImage)
-            _Text = str;
-        else
-            _Image = new Image(str);
+        _Text = str;
     }
 
     public String getText()
