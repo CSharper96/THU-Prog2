@@ -1,0 +1,5 @@
+.gameGrid{
+    -fx-background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Wood_Pseudotsuga_taxifolia.jpg/1024px-Wood_Pseudotsuga_taxifolia.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
