@@ -53,8 +53,8 @@ public class CurrencyConverterCtrl implements Initializable
         if(!tfAmount.getText().equals("") && isNumeric(tfAmount.getText()))
         {
             inputValue = DOUBLE_STRING_CONVERTER.fromString(tfAmount.getText());
-            double inputValueInDollars = inputValue * inputCurrency.getRupeeConversionRate();
-            double outputValue = inputValueInDollars / outputCurrency.getRupeeConversionRate();
+            double inputValueInDollars = inputValue * inputCurrency.getEuroConversionRate();
+            double outputValue = inputValueInDollars / outputCurrency.getEuroConversionRate();
             tfResult.setText(CURRENCY_FORMAT.format(outputValue));
         }
     }
