@@ -13,7 +13,7 @@ public enum Currency {
         this.euroConversionRate = euroConversionRate;
     }
 
-    public double getRupeeConversionRate() {
+    public double getEuroConversionRate() {
         return euroConversionRate;
     }
 }
