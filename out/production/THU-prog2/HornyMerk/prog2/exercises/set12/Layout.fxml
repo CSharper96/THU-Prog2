@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HornyMerk.prog2.exercises.set12.ConnectFourController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="HornyMerk.prog2.exercises.set12.ConnectFourController">
    <children>
       <BorderPane prefHeight="700.0" prefWidth="600.0">
          <top>
@@ -28,7 +28,7 @@
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <Button id="btnClear" mnemonicParsing="false" text="Clear">
+                  <Button id="btnClear" mnemonicParsing="false" text="Clear" onAction="#test">
                      <HBox.margin>
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>

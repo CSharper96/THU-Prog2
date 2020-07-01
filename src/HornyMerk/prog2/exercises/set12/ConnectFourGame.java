@@ -4,29 +4,23 @@ import rl.prog2.exercises.ss12set01.connectfour.Board;
 import rl.prog2.exercises.ss12set01.connectfour.Disk;
 import rl.prog2.exercises.ss12set01.connectfour.EqualDiskCounter;
 
+import java.util.ArrayList;
+
 public class ConnectFourGame
 {
-    private String[] players;
+    private ArrayList<Player> players;
     private String winner;
 
     protected Board board;
     private int moveCount;
 
     public ConnectFourGame() {
-        players = new String[] { "red", "yellow" };
+        players = new ArrayList<>();
         board = new Board(6, 7);
     }
 
-    /**
-     * Replaces the names for the disk colors. The default names are red and
-     * yellow.
-     */
-    public void setPlayers(String colorPlayer1, String colorPlayer2) {
-        players = new String[] { colorPlayer1, colorPlayer2 };
-    }
-
-    public String getNextPlayerColor() {
-        return players[moveCount % 2];
+    public Player getNextPlayerColor() {
+        return players.get(moveCount % 2);
     }
 
     public Board getBoard() {
@@ -42,7 +36,7 @@ public class ConnectFourGame
     }
 
     public void makeMove(int col) {
-        if (board.drop(new Disk(getNextPlayerColor()), col))
+        //if (board.drop(new Disk(getNextPlayerColor()), col))
             moveCount++;
         winner = checkForWinner();
     }
