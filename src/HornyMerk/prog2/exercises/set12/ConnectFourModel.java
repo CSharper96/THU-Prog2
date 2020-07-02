@@ -11,6 +11,10 @@ public class ConnectFourModel
     protected ObservableList<Player> _Players = FXCollections.observableArrayList();
     public int moveCount = 0;
 
+    protected void setCircles(Circle[][] circles)
+    {
+        _Circles = circles;
+    }
     public Circle getCircle(int row, int col)
     {
         if(_Circles.length != 0)

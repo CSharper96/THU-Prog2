@@ -1,6 +1,7 @@
 package HornyMerk.prog2.exercises.set12;
 
 import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
 import rl.prog2.exercises.ss12set01.connectfour.Board;
 import rl.prog2.exercises.ss12set01.connectfour.Disk;
 import rl.prog2.exercises.ss12set01.connectfour.EqualDiskCounter;
@@ -11,9 +12,9 @@ public class ConnectFourGame extends ConnectFourModel
 {
     private ConnectFourView _View;
 
-    public ConnectFourGame(ConnectFourView view) {
+    public ConnectFourGame(ConnectFourView view, Circle[][] circles) {
         this._View = view;
-        //initCircleArray();
+        setCircles(circles);
     }
     public void move(int col)
     {

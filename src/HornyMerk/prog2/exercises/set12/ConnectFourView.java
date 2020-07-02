@@ -16,20 +16,4 @@ public class ConnectFourView
     {
         this._GameGrid = gameGrid;
     }
-
-    public Circle[][] initCircleArray()
-    {
-        ObservableList<Node> childrens = _GameGrid.getChildren();
-        for(int col = 0; col < 8; col++)
-        {
-            for(int row = 1; row < 8; row++)
-            {
-                for (Node node : childrens) {
-                    if (_GameGrid.getRowIndex(node) == row && _GameGrid.getColumnIndex(node) == col)
-                        Circles[row - 1][col] = (Circle) node;
-                }
-            }
-        }
-        return Circles;
-    }
 }
