@@ -12,6 +12,7 @@ import java.io.IOException;
 
 public class ConnectFourApp extends Application {
 
+
     public static void main(String[] args) {
         launch(args);
     }
