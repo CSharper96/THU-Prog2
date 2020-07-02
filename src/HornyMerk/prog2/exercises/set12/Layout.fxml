@@ -18,12 +18,12 @@
          <top>
             <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <ComboBox prefWidth="150.0">
+                  <ComboBox prefWidth="150.0" fx:id="cb1">
                      <HBox.margin>
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>
                   </ComboBox>
-                  <ComboBox prefWidth="150.0">
+                  <ComboBox prefWidth="150.0" fx:id="cb2">
                      <HBox.margin>
                         <Insets left="10.0" right="10.0" />
                      </HBox.margin>
@@ -62,77 +62,77 @@
                 <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button id="btnRow1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" onAction="#btnPushed">
+                  <Button id="btnRow1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" onAction="#btnPushed">
+                  <Button id="btnRow2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" onAction="#btnPushed">
+                  <Button id="btnRow3" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.columnIndex="3" onAction="#btnPushed">
+                  <Button id="btnRow4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4" GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="4" onAction="#btnPushed">
+                  <Button id="btnRow5" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5" GridPane.columnIndex="4" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="5" onAction="#btnPushed">
+                  <Button id="btnRow6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6" GridPane.columnIndex="5" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button id="btnRow7" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" GridPane.columnIndex="6" onAction="#btnPushed">
+                  <Button id="btnRow7" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7" GridPane.columnIndex="6" GridPane.rowIndex="0" onAction="#btnPushed">
                      <GridPane.margin>
                         <Insets left="5.0" right="5.0" />
                      </GridPane.margin>
                   </Button>
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="1" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="2" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="3" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="4" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="5" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.rowIndex="6" />
+                  <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="0" GridPane.rowIndex="6" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                   <Circle fill="#90b0b9" radius="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
@@ -143,7 +143,7 @@
             </GridPane>
          </center>
          <bottom>
-            <Label text="Some TEXT informing the player" BorderPane.alignment="CENTER_LEFT" />
+            <Label text="Some TEXT informing the player" BorderPane.alignment="CENTER_LEFT" fx:id="infoLbl" />
          </bottom>
       </BorderPane>
    </children>

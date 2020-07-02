@@ -12,11 +12,9 @@ public enum Player
     {
         this._Color = color;
         Name = name;
-        PlayerCircles = new ArrayList<>();
     }
     private String _Color;
     public String Name;
-    public ArrayList<Circle> PlayerCircles;
 
     public String getColor()
     {
