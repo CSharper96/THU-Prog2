@@ -1,6 +1,5 @@
 package HornyMerk.prog2.exercises.set10;
 
-import HornyMerk.prog2.exercises.set09.Counter;
 import HornyMerk.prog2.exercises.set10.Utilities.IMemoryGame;
 import HornyMerk.prog2.exercises.set10.Utilities.MemoryGame;
 import javafx.application.Application;
@@ -8,11 +7,10 @@ import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class MemoryFxApp extends Application implements IMemoryGame {

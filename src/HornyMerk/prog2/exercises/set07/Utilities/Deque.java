@@ -15,7 +15,6 @@ public class Deque <T > implements Iterable, Cloneable{
         _FirstIndex = 0;
         _LastIndex = capacity-1;
     }
-
     public boolean isEmpty()
     {
         boolean check = true;

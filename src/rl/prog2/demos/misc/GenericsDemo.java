@@ -2,6 +2,8 @@ package rl.prog2.demos.misc;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Contains code examples which demonstrate how to use generics. It is not very
@@ -28,7 +30,6 @@ public class GenericsDemo {
 		
 		String winner = vote("a", "b", "a");
 	}
-
 	/** Simple method accepting a wildcard type. */
 	static void print(Collection<?> elements) {
 		System.out.print("[ ");
@@ -129,6 +130,16 @@ public class GenericsDemo {
 		}
 	}
 
+	public static class Masterstudent extends Student {
+		Masterstudent(String name, int number, int num2) {
+			super(name, number);
+		}
+
+		int getMasterstudentNum2() {
+			return 0;
+		}
+	}
+
 	/** Suitable for persons but not for students. */
 	public static class MySortedList1<E extends Comparable<E>> {
 		// ...
@@ -152,7 +163,7 @@ public class GenericsDemo {
 		void set(Object x) {
 			// if (x instanceof T) // error: cannot perform instanceof checks...
 			{
-				// …
+				// ï¿½
 			}
 			attr = (T) x; // cast has no effect at runtime - no cast exception!
 		}
